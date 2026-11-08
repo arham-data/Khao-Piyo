@@ -1,4 +1,5 @@
 import heroStage from '../assets/images/hero-stage.png'
+import { categories } from '../data/categories'
 import './HomePage.css'
 
 /**
@@ -132,6 +133,52 @@ function HomePage() {
                 sessions right across campus gates.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== CATEGORIES ==================== */}
+      <section className="categories" id="categories">
+        <div className="categories-inner">
+          <div className="categories-header">
+            <div>
+              <span className="categories-eyebrow">Discover by Mood</span>
+              <h2 className="categories-title">Explore Categories</h2>
+            </div>
+
+            <p className="categories-copy">
+              Pick your vibe for the evening. Filter college culture, intense rhythms,
+              or hearty street food.
+            </p>
+          </div>
+
+          {/* Eight tiles generated from src/data/categories.js */}
+          <div className="categories-grid">
+            {categories.map((category) => (
+              <a
+                key={category.id}
+                className={`glass-card glass-card-hover category-card is-${category.color}`}
+                href="#events"
+              >
+                <div>
+                  <div className="category-icon">{category.emoji}</div>
+                  <h3 className="category-title">{category.title}</h3>
+                  <p className="category-text">{category.description}</p>
+                </div>
+
+                <div className="category-cta">
+                  <span>{category.cta}</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <path
+                      d="M9 5l7 7-7 7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
