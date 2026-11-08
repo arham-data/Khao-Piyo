@@ -598,7 +598,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .category-coming-soon-label {
@@ -609,7 +609,7 @@
   border-radius: 0.4rem;
   background-color: rgba(0, 0, 0, 0.35);
   color: #ff3b3b;
-  font-size: 0.75rem;
+  font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1190,6 +1190,10 @@
   .events,
   .cta {
     padding: 4rem 1.25rem;
+  }
+
+  .categories-grid{
+    grid-template-columns: 1fr 1fr;
   }
 
   .categories-inner,

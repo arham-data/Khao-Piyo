@@ -5,9 +5,9 @@
 
 .footer {
   position: relative;
-  padding: 4rem 2rem 3rem;
+  padding: 1rem 2rem 1rem;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  /*border-top: 1px solid rgba(255, 255, 255, 0.1);*/
   background-image:
     linear-gradient(
       135deg,
@@ -84,14 +84,14 @@
   position: relative;
   z-index: 10;
   width: 100%;
-  padding: 3rem 2rem;
+  padding: 1rem 1rem;
 }
 
 .footer-brand {
   width: 100%;
   padding: 1.5rem 0;
   font-family: 'Amita', cursive;
-  font-size: clamp(2rem, 7vw, 5rem);
+  font-size: clamp(4rem, 18vw, 20rem);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.02em;
