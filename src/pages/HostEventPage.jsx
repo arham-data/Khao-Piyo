@@ -515,9 +515,6 @@ function HostEventPage() {
                       bolt
                     </span>
                   </button>
-                  <p className="host-disclaimer">
-                    Demo form — nothing is sent anywhere and no account is created.
-                  </p>
                 </div>
               </form>
 
@@ -556,16 +553,14 @@ function HostEventPage() {
                   </li>
                 </ol>
 
-                <p className="host-aside-note">
-                  Listing is free for campus societies and student-run collectives.
-                </p>
+                
               </aside>
             </div>
           )}
         </div>
       </main>
 
-      <Footer />
+      
     </>
   )
 }
