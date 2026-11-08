@@ -3,11 +3,13 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import AllEventsPage from './pages/AllEventsPage'
 import EventDetailPage from './pages/EventDetailPage'
+import HostEventPage from './pages/HostEventPage'
 
 /* The browser tab title for each route. */
 const PAGE_TITLES = {
   '/': 'Khao Piyo — Khao Piyo Aish Karo Mitro! | College Fests, Concerts & Bhandaras',
   '/events': 'Discover All Events | Khao Piyo',
+  '/host': 'List Your Event | Khao Piyo',
 }
 
 /**
@@ -101,6 +103,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/events" element={<AllEventsPage />} />
         <Route path="/events/:id" element={<EventDetailPage />} />
+        <Route path="/host" element={<HostEventPage />} />
       </Routes>
 
       <BackToTop />

@@ -1,0 +1,602 @@
+/* ============================================================
+   HOST AN EVENT PAGE
+   Everything is prefixed with .host- so it can never clash with
+   the homepage, All Events or Event Detail styles.
+   ============================================================ */
+
+.host-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #090814;
+}
+
+/* ------------------------------------------------------------
+   AMBIENT STAGE LIGHTING
+   ------------------------------------------------------------ */
+
+.host-stage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  height: 50rem;
+  pointer-events: none;
+}
+
+.host-orb {
+  position: absolute;
+  border-radius: 9999px;
+}
+
+.host-orb-magenta {
+  top: -8rem;
+  left: 8%;
+  width: 32rem;
+  height: 32rem;
+  background-color: rgba(236, 19, 184, 0.16);
+  filter: blur(130px);
+}
+
+.host-orb-cyan {
+  top: 1rem;
+  right: 6%;
+  width: 28rem;
+  height: 28rem;
+  background-color: rgba(0, 229, 255, 0.12);
+  filter: blur(130px);
+}
+
+.host-orb-purple {
+  top: 20rem;
+  left: 45%;
+  width: 30rem;
+  height: 30rem;
+  background-color: rgba(139, 92, 246, 0.12);
+  filter: blur(140px);
+}
+
+.host-neon-bar {
+  width: 100%;
+  height: 4px;
+  background-image: linear-gradient(to right, transparent, #00e5ff, #ec13b8);
+  opacity: 0.8;
+  box-shadow: 0 0 20px #00e5ff, 0 0 40px #ec13b8;
+}
+
+/* ------------------------------------------------------------
+   PAGE SHELL
+   ------------------------------------------------------------ */
+
+.host-shell {
+  position: relative;
+  z-index: 10;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 5rem;
+}
+
+/* ------------------------------------------------------------
+   BACK LINK
+   ------------------------------------------------------------ */
+
+.host-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-bottom: 1.25rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #bdf4ff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.host-back:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* ------------------------------------------------------------
+   HEADER
+   ------------------------------------------------------------ */
+
+.host-hero {
+  margin-bottom: 2rem;
+}
+
+.host-hero-pill {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  border-radius: 9999px;
+  background-color: rgba(0, 229, 255, 0.1);
+  color: #bdf4ff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.host-hero-title {
+  margin-top: 1rem;
+  color: #ffffff;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.host-hero-copy {
+  max-width: 38rem;
+  margin-top: 1rem;
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* ------------------------------------------------------------
+   LAYOUT
+   Form on the left, "what happens next" on the right.
+   ------------------------------------------------------------ */
+
+.host-layout {
+  display: grid;
+  gap: 2rem;
+}
+
+/* ------------------------------------------------------------
+   FORM CARD
+   ------------------------------------------------------------ */
+
+.host-form {
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.035);
+  background-image: linear-gradient(
+    160deg,
+    rgba(236, 19, 184, 0.07) 0%,
+    transparent 45%,
+    rgba(0, 229, 255, 0.06) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9);
+}
+
+.host-form-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(236, 19, 184, 0.45);
+  border-radius: 0.75rem;
+  background-color: rgba(236, 19, 184, 0.12);
+  color: #fbcfe8;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.host-form-alert .material-symbols-outlined {
+  font-size: 1.15rem;
+}
+
+.host-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
+  color: #f8fafc;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.host-section-title:first-of-type {
+  margin-top: 0;
+}
+
+/* Neon tick before each section heading */
+.host-section-title::before {
+  content: '';
+  width: 0.3rem;
+  height: 1rem;
+  border-radius: 9999px;
+  background-image: linear-gradient(to bottom, #ec13b8, #00e5ff);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
+}
+
+/* ------------------------------------------------------------
+   FIELDS
+   ------------------------------------------------------------ */
+
+.host-grid {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.host-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.host-label {
+  margin-bottom: 0.45rem;
+  color: #e2e8f0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.host-input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.65rem;
+  background-color: rgba(9, 8, 20, 0.6);
+  color: #f8fafc;
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color-scheme: dark;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.host-input::placeholder {
+  color: #64748b;
+}
+
+.host-input:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.host-input:focus {
+  border-color: #00e5ff;
+  outline: none;
+  background-color: rgba(9, 8, 20, 0.85);
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.18);
+}
+
+.host-select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.25rem;
+  background-image: linear-gradient(45deg, transparent 50%, #67e8f9 50%),
+    linear-gradient(135deg, #67e8f9 50%, transparent 50%);
+  background-position: calc(100% - 1.15rem) 50%, calc(100% - 0.8rem) 50%;
+  background-size: 0.35rem 0.35rem, 0.35rem 0.35rem;
+  background-repeat: no-repeat;
+}
+
+.host-textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.host-hint {
+  margin-top: 0.4rem;
+  color: #64748b;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.host-error {
+  margin-top: 0.4rem;
+  color: #f9a8d4;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.host-field.has-error .host-input {
+  border-color: rgba(236, 19, 184, 0.75);
+  background-color: rgba(236, 19, 184, 0.06);
+}
+
+.host-field.has-error .host-input:focus {
+  border-color: #ec13b8;
+  box-shadow: 0 0 0 3px rgba(236, 19, 184, 0.2);
+}
+
+/* ------------------------------------------------------------
+   ACTIONS
+   ------------------------------------------------------------ */
+
+.host-actions {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.host-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  background-image: linear-gradient(to right, #ec13b8, #8b5cf6, #00e5ff);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  box-shadow: 0 10px 30px -8px rgba(236, 19, 184, 0.7);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.host-btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 40px -10px rgba(0, 229, 255, 0.6);
+}
+
+.host-btn-primary .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
+.host-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.host-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.host-disclaimer {
+  margin-top: 0.9rem;
+  color: #64748b;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------
+   SIDE PANEL
+   ------------------------------------------------------------ */
+
+.host-aside {
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.host-aside-title {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.host-steps {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  list-style: none;
+}
+
+.host-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.host-step-number {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background-image: linear-gradient(to bottom right, #ec13b8, #8b5cf6);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  box-shadow: 0 0 16px rgba(236, 19, 184, 0.45);
+}
+
+.host-step-title {
+  color: #e2e8f0;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.host-step-copy {
+  margin-top: 0.25rem;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+.host-aside-note {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  color: #64748b;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------
+   SUCCESS PANEL
+   ------------------------------------------------------------ */
+
+.host-success {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  border: 1px solid rgba(0, 229, 255, 0.22);
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  background-image: linear-gradient(
+    160deg,
+    rgba(0, 229, 255, 0.08) 0%,
+    transparent 50%,
+    rgba(236, 19, 184, 0.08) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+.host-success-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 9999px;
+  background-image: linear-gradient(to bottom right, #00e5ff, #8b5cf6);
+  color: #04121a;
+  box-shadow: 0 0 28px rgba(0, 229, 255, 0.55);
+}
+
+.host-success-mark .material-symbols-outlined {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.host-success-title {
+  margin-top: 1.25rem;
+  color: #ffffff;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.host-success-copy {
+  margin-top: 0.85rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.host-success-copy strong {
+  color: #e2e8f0;
+  font-weight: 700;
+}
+
+.host-success-facts {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.75rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  background-color: rgba(9, 8, 20, 0.45);
+  text-align: left;
+}
+
+.host-success-facts dt {
+  color: #64748b;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.host-success-facts dd {
+  margin-top: 0.15rem;
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.host-success-actions {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+/* ------------------------------------------------------------
+   BREAKPOINTS
+   ------------------------------------------------------------ */
+
+@media (min-width: 640px) {
+  .host-shell {
+    padding: 2rem 2rem 6rem;
+  }
+
+  .host-form {
+    padding: 2rem;
+  }
+
+  .host-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .host-field-full {
+    grid-column: 1 / -1;
+  }
+
+  .host-btn-primary,
+  .host-btn-secondary {
+    width: auto;
+  }
+
+  .host-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .host-actions .host-btn-primary {
+    min-width: 14rem;
+  }
+
+  .host-disclaimer {
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .host-success-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .host-success-facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .host-layout {
+    grid-template-columns: minmax(0, 1fr) 20rem;
+    align-items: start;
+    gap: 2.5rem;
+  }
+
+  .host-aside {
+    position: sticky;
+    top: 1.5rem;
+  }
+}

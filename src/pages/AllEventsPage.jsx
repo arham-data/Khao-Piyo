@@ -160,12 +160,12 @@ function AllEventsPage() {
               </div>
 
               <div className="all-events-host-action">
-                <button type="button" className="all-events-host-btn">
+                <Link className="all-events-host-btn" to="/host">
                   <span>Submit Your Event</span>
                   <span className="material-symbols-outlined" aria-hidden="true">
                     bolt
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
           </section>

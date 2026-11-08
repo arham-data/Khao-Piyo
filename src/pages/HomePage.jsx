@@ -281,9 +281,9 @@ function HomePage() {
                 <a className="cta-btn-primary" href="#events">
                   Explore Events Now
                 </a>
-                <button type="button" className="cta-btn-secondary">
+                <Link className="cta-btn-secondary" to="/host">
                   Host or List an Event
-                </button>
+                </Link>
               </div>
             </div>
           </div>
