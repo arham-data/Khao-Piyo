@@ -576,12 +576,51 @@
 
 /* --- Card --- */
 .category-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1.5rem;
+  overflow: hidden;
   border-radius: 1rem;
   border-left: 4px solid transparent;
+}
+
+/* ------------------------------------------------------------
+   COMING SOON COVER
+   The tint fills the whole tile; the badge stays text-sized.
+   ------------------------------------------------------------ */
+
+.category-coming-soon {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.category-coming-soon-label {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  transform: rotate(-7deg);
+  border: 2px solid #ff3b3b;
+  border-radius: 0.4rem;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: #ff3b3b;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 0 12px rgba(255, 59, 59, 0.55);
+  box-shadow: 0 0 18px rgba(255, 59, 59, 0.4);
+}
+
+/* A covered tile is not a destination, so it should not lift */
+.category-card.is-coming-soon:hover {
+  transform: none;
 }
 
 .category-icon {

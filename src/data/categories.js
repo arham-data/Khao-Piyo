@@ -6,6 +6,7 @@
  * you can add or edit a category without touching the layout.
  *
  * color: matches the `is-<color>` class in HomePage.css
+ * comingSoon: true puts the tinted "Coming Soon" cover on the tile
  */
 export const categories = [
   {
@@ -23,6 +24,7 @@ export const categories = [
     title: 'Concerts & Music',
     description: 'EDM nights, indie rock tours, acoustic jams & campus gigs.',
     cta: 'Explore 58 Shows',
+    comingSoon: true,
   },
   {
     id: 'comedy',
@@ -31,6 +33,7 @@ export const categories = [
     title: 'Comedy Shows',
     description: 'Campus open-mics, trial shows & top comedian national tours.',
     cta: 'Explore 29 Lineups',
+    comingSoon: true,
   },
   {
     id: 'workshops',
@@ -39,6 +42,7 @@ export const categories = [
     title: 'Workshops & Exhibitions',
     description: 'UI/UX hackathons, pottery, indie art labs & tech bootcamps.',
     cta: 'Explore 35 Bootcamps',
+    comingSoon: true,
   },
   {
     id: 'bhandaras',
@@ -47,6 +51,7 @@ export const categories = [
     title: 'Bhandaras',
     description: 'Holy prasad feasts, Tuesday langar points & community food.',
     cta: 'Explore 18 Locations',
+    comingSoon: true,
   },
   {
     id: 'cultural',
@@ -55,6 +60,7 @@ export const categories = [
     title: 'Cultural Events',
     description: 'Street nukkad natak, Urdu poetry mushairas & folk festivals.',
     cta: 'Explore 22 Gatherings',
+    comingSoon: true,
   },
   {
     id: 'parties',
@@ -63,6 +69,7 @@ export const categories = [
     title: 'Parties & Social',
     description: 'Fresher sundowners, rooftop trivia nights & hostel mixers.',
     cta: 'Explore 44 Mixers',
+    comingSoon: true,
   },
   {
     id: 'local',
@@ -71,5 +78,6 @@ export const categories = [
     title: 'Local Experiences',
     description: 'Midnight heritage cycling walks, sunrise photo walks & stargazing.',
     cta: 'Explore 19 Experiences',
+    comingSoon: true,
   },
 ]

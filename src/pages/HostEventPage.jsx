@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Footer from '../components/Footer'
 import './HostEventPage.css'
 
 /**
