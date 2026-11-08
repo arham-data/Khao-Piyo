@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import AllEventsPage from './pages/AllEventsPage'
 import EventDetailPage from './pages/EventDetailPage'
 import HostEventPage from './pages/HostEventPage'
+import { Analytics } from "@vercel/analytics/react"
 
 /* The browser tab title for each route. */
 const PAGE_TITLES = {
@@ -91,6 +92,7 @@ function BackToTop() {
 
 function App() {
   return (
+    <>
     <BrowserRouter>
       {/* Keyboard users can jump straight past the hero */}
       <a className="skip-link" href="#main-content">
@@ -108,6 +110,8 @@ function App() {
 
       <BackToTop />
     </BrowserRouter>
+    <Analytics />
+    </>
   )
 }
 
