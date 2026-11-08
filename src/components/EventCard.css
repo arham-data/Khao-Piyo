@@ -1,0 +1,371 @@
+/* ============================================================
+   EVENT CARD
+   Used by the homepage featured grid and, later, the
+   Discover All Events page.
+   ============================================================ */
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------
+   PHOTO AREA
+   ------------------------------------------------------------ */
+
+.event-card-media {
+  position: relative;
+  width: 100%;
+  height: 11rem;
+  overflow: hidden;
+  background-color: #1e293b;
+}
+
+.event-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-card-image {
+  transform: scale(1.05);
+}
+
+/* Fades the bottom of the photo into the card body */
+.event-card-media-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #0d0b20 0%, transparent 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------
+   BADGES ON THE PHOTO
+   ------------------------------------------------------------ */
+
+.event-card-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.event-card-price {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------
+   BODY
+   ------------------------------------------------------------ */
+
+.event-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
+}
+
+.event-card-date {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.event-card-date svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-right: 0.25rem;
+}
+
+.event-card-title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.event-card-venue {
+  display: flex;
+  align-items: center;
+  margin-top: 0.25rem;
+  color: #94a3b8;
+  font-size: 0.75rem;
+}
+
+.event-card-venue svg {
+  flex-shrink: 0;
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-right: 0.25rem;
+  color: #64748b;
+}
+
+.event-card-venue span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event-card-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin-top: 0.75rem;
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+/* ------------------------------------------------------------
+   FOOTER ROW
+   ------------------------------------------------------------ */
+
+.event-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.event-card-footer-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.event-card-link {
+  display: inline-flex;
+  align-items: center;
+  color: #00d2ff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.event-card-link:hover {
+  color: #a5f3fc;
+}
+
+.event-card-link svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-left: 0.25rem;
+  transition: transform 0.2s ease;
+}
+
+.event-card:hover .event-card-link svg {
+  transform: translateX(0.25rem);
+}
+
+/* ============================================================
+   BADGE COLOURS
+   ============================================================ */
+
+.badge-magenta {
+  background-color: rgba(236, 19, 184, 0.9);
+  color: #ffffff;
+}
+
+.badge-blue {
+  background-color: rgba(14, 111, 255, 0.9);
+  color: #ffffff;
+}
+
+.badge-orange {
+  background-color: rgba(234, 88, 12, 0.9);
+  color: #ffffff;
+}
+
+.badge-yellow {
+  background-color: rgba(234, 179, 8, 0.9);
+  color: #0f172a;
+}
+
+.badge-emerald {
+  background-color: rgba(16, 185, 129, 0.9);
+  color: #0f172a;
+}
+
+.badge-rose {
+  background-color: rgba(244, 63, 94, 0.9);
+  color: #ffffff;
+}
+
+.badge-purple {
+  background-color: rgba(147, 51, 234, 0.9);
+  color: #ffffff;
+}
+
+.badge-cyan {
+  background-color: rgba(8, 145, 178, 0.9);
+  color: #ffffff;
+}
+
+/* ============================================================
+   PRICE CHIP COLOURS
+   ============================================================ */
+
+.price-emerald {
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+.price-yellow {
+  border-color: rgba(234, 179, 8, 0.3);
+  color: #fde047;
+}
+
+.price-green {
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #86efac;
+}
+
+.price-cyan {
+  border-color: rgba(6, 182, 212, 0.3);
+  color: #67e8f9;
+}
+
+.price-pink {
+  border-color: rgba(236, 72, 153, 0.3);
+  color: #f9a8d4;
+}
+
+.price-purple {
+  border-color: rgba(168, 85, 247, 0.3);
+  color: #d8b4fe;
+}
+
+/* ============================================================
+   ACCENT COLOURS (date + title hover)
+   ============================================================ */
+
+.event-card.is-pink .event-card-date {
+  color: #f472b6;
+}
+.event-card.is-pink:hover .event-card-title {
+  color: #f9a8d4;
+}
+
+.event-card.is-cyan .event-card-date {
+  color: #00d2ff;
+}
+.event-card.is-cyan:hover .event-card-title {
+  color: #67e8f9;
+}
+
+.event-card.is-orange .event-card-date {
+  color: #fb923c;
+}
+.event-card.is-orange:hover .event-card-title {
+  color: #fdba74;
+}
+
+.event-card.is-yellow .event-card-date {
+  color: #fde047;
+}
+.event-card.is-yellow:hover .event-card-title {
+  color: #fde047;
+}
+
+.event-card.is-emerald .event-card-date {
+  color: #6ee7b7;
+}
+.event-card.is-emerald:hover .event-card-title {
+  color: #6ee7b7;
+}
+
+.event-card.is-rose .event-card-date {
+  color: #fda4af;
+}
+.event-card.is-rose:hover .event-card-title {
+  color: #fda4af;
+}
+
+.event-card.is-purple .event-card-date {
+  color: #d8b4fe;
+}
+.event-card.is-purple:hover .event-card-title {
+  color: #d8b4fe;
+}
+
+/* ============================================================
+   FOOTER LABEL COLOURS
+   ============================================================ */
+
+.footer-white {
+  color: #ffffff;
+}
+
+.footer-emerald {
+  color: #34d399;
+}
+
+/* ============================================================
+   IMAGE FILTERS
+   All cards share one photo; each gets a slightly different
+   look, exactly as in the Stitch design.
+   ============================================================ */
+
+.img-none {
+  filter: none;
+}
+
+.img-hue-15 {
+  filter: hue-rotate(15deg);
+}
+
+.img-saturate-150 {
+  filter: saturate(1.5);
+}
+
+.img-contrast-125 {
+  filter: contrast(1.25);
+}
+
+.img-invert-15 {
+  filter: invert(15%);
+}
+
+.img-hue-60 {
+  filter: hue-rotate(60deg);
+}
+
+.img-hue-180 {
+  filter: hue-rotate(180deg);
+}
+
+.img-hue-90 {
+  filter: hue-rotate(90deg);
+}

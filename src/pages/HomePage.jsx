@@ -1,5 +1,7 @@
 import heroStage from '../assets/images/hero-stage.png'
+import EventCard from '../components/EventCard'
 import { categories } from '../data/categories'
+import { featuredEvents } from '../data/events'
 import './HomePage.css'
 
 /**
@@ -179,6 +181,61 @@ function HomePage() {
                 </div>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== FEATURED EVENTS ==================== */}
+      <section className="events" id="events">
+        <div className="events-inner">
+          <div className="events-header">
+            <div>
+              <span className="events-eyebrow">Curated For You</span>
+              <h2 className="events-title">What&apos;s the scene?</h2>
+              <p className="events-subtitle">
+                Good plans. Great people. Unforgettable experiences.
+              </p>
+            </div>
+
+            {/* Filter chips — visual only, exactly as in the design */}
+            <div className="events-filters">
+              <button type="button" className="filter-chip is-active">
+                All Plans
+              </button>
+              <button type="button" className="filter-chip">
+                College Fests
+              </button>
+              <button type="button" className="filter-chip">
+                Music
+              </button>
+              <button type="button" className="filter-chip">
+                Comedy
+              </button>
+              <button type="button" className="filter-chip">
+                Bhandaras
+              </button>
+            </div>
+          </div>
+
+          {/* Eight cards generated from src/data/events.js */}
+          <div className="events-grid">
+            {featuredEvents.map((event) => (
+              <EventCard key={event.id} event={event} image={heroStage} />
+            ))}
+          </div>
+
+          <div className="events-more">
+            <a className="events-more-link" href="#cta">
+              <span>View All 84+ Events Happening AASPAAS</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                />
+              </svg>
+            </a>
           </div>
         </div>
       </section>

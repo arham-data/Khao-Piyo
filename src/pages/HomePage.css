@@ -785,3 +785,165 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* ============================================================
+   FEATURED EVENTS SECTION
+   "What's the scene?" + filter chips + eight event cards
+   ============================================================ */
+
+.events {
+  position: relative;
+  padding: 7rem 2rem;
+  background-image: linear-gradient(to bottom, #090814 0%, #0f0c24 50%, #090814 100%);
+}
+
+.events-inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Header row --- */
+.events-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.events-eyebrow {
+  color: #00d2ff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.events-title {
+  margin-top: 0.25rem;
+  color: #ffffff;
+  font-size: 1.875rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.events-subtitle {
+  margin-top: 0.5rem;
+  color: #cbd5e1;
+  font-size: 0.875rem;
+}
+
+/* --- Filter chips --- */
+.events-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.filter-chip {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.filter-chip:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.filter-chip.is-active {
+  border-color: transparent;
+  background-color: #ec13b8;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 0 25px rgba(236, 19, 184, 0.45);
+}
+
+/* --- Card grid --- */
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* --- "View all" button --- */
+.events-more {
+  margin-top: 3.5rem;
+  text-align: center;
+}
+
+.events-more-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.events-more-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.events-more-link svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 0.5rem;
+  color: #f472b6;
+}
+
+/* --- Responsive --- */
+@media (min-width: 640px) {
+  .events-inner {
+    padding: 0 2.5rem;
+  }
+
+  .events-title {
+    font-size: 3rem;
+  }
+
+  .events-subtitle {
+    font-size: 1rem;
+  }
+
+  .filter-chip {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .events-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .events-filters {
+    margin-top: 0;
+  }
+
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .events-inner {
+    padding: 0 4rem;
+  }
+
+  .events-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
