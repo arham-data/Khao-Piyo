@@ -41,6 +41,32 @@ const CATEGORIES = [
   'Workshop',
 ]
 
+/* Turn the raw input values into something readable. */
+function formatDate(value) {
+  if (!value) return ''
+
+  const date = new Date(`${value}T00:00:00`)
+
+  return date.toLocaleDateString('en-IN', {
+    weekday: 'short',
+    day: 'numeric',
+    month: 'short',
+  })
+}
+
+function formatTime(value) {
+  if (!value) return ''
+
+  const [hours, minutes] = value.split(':')
+  const date = new Date()
+  date.setHours(Number(hours), Number(minutes), 0, 0)
+
+  return date.toLocaleTimeString('en-IN', {
+    hour: 'numeric',
+    minute: '2-digit',
+  })
+}
+
 /**
  * Small helper so every field gets the same label / hint / error
  * markup without repeating it ten times.
@@ -56,7 +82,11 @@ function FormField({ id, label, error, hint, full, children }) {
         {label}
       </label>
       {children}
-      {hint && !error && <p className="host-hint">{hint}</p>}
+      {hint && !error && (
+        <p className="host-hint" id={`${id}-hint`}>
+          {hint}
+        </p>
+      )}
       {error && (
         <p className="host-error" id={`${id}-error`}>
           {error}
@@ -71,16 +101,28 @@ function HostEventPage() {
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
   const successRef = useRef(null)
+  const nameRef = useRef(null)
+  const hasUsedForm = useRef(false)
 
-  // Move focus into the success panel so screen readers land on it.
+  // Move focus into the success panel so screen readers land on it,
+  // and back to the first field when the form is reset.
   useEffect(() => {
-    if (submitted && successRef.current) {
-      successRef.current.focus()
+    if (submitted) {
+      hasUsedForm.current = true
+      if (successRef.current) successRef.current.focus()
+    } else if (hasUsedForm.current && nameRef.current) {
+      nameRef.current.focus()
     }
   }, [submitted])
 
   function handleChange(event) {
-    const { name, value } = event.target
+    const { name } = event.target
+    let { value } = event.target
+
+    // The price field takes digits only, so no stray symbols creep in.
+    if (name === 'price') {
+      value = value.replace(/[^\d]/g, '')
+    }
 
     setForm((previous) => ({ ...previous, [name]: value }))
 
@@ -203,7 +245,7 @@ function HostEventPage() {
                 <div>
                   <dt>When</dt>
                   <dd>
-                    {form.date} at {form.time}
+                    {formatDate(form.date)} at {formatTime(form.time)}
                   </dd>
                 </div>
                 <div>
@@ -230,7 +272,16 @@ function HostEventPage() {
           ) : (
             <div className="host-layout">
               {/* ==================== FORM ==================== */}
-              <form className="host-form" onSubmit={handleSubmit} noValidate>
+              <form
+                className="host-form"
+                onSubmit={handleSubmit}
+                noValidate
+                aria-labelledby="host-form-title"
+              >
+                <p className="sr-only" id="host-form-title">
+                  Event submission form
+                </p>
+
                 {errorCount > 0 && (
                   <div className="host-form-alert" role="alert">
                     <span className="material-symbols-outlined" aria-hidden="true">
@@ -262,6 +313,8 @@ function HostEventPage() {
                       placeholder="e.g. Mood Indigo 2025: Pro-Nite"
                       value={form.name}
                       onChange={handleChange}
+                      ref={nameRef}
+                      aria-required="true"
                       aria-invalid={Boolean(errors.name)}
                       aria-describedby={errors.name ? 'host-name-error' : undefined}
                     />
@@ -278,6 +331,7 @@ function HostEventPage() {
                       name="category"
                       value={form.category}
                       onChange={handleChange}
+                      aria-required="true"
                       aria-invalid={Boolean(errors.category)}
                       aria-describedby={
                         errors.category ? 'host-category-error' : undefined
@@ -306,8 +360,11 @@ function HostEventPage() {
                       placeholder="you@college.edu"
                       value={form.email}
                       onChange={handleChange}
+                      aria-required="true"
                       aria-invalid={Boolean(errors.email)}
-                      aria-describedby={errors.email ? 'host-email-error' : undefined}
+                      aria-describedby={
+                        errors.email ? 'host-email-error' : 'host-email-hint'
+                      }
                     />
                   </FormField>
 
@@ -326,9 +383,12 @@ function HostEventPage() {
                       placeholder="Tell students what the night looks like — the lineup, the food, the vibe."
                       value={form.description}
                       onChange={handleChange}
+                      aria-required="true"
                       aria-invalid={Boolean(errors.description)}
                       aria-describedby={
-                        errors.description ? 'host-description-error' : undefined
+                        errors.description
+                          ? 'host-description-error'
+                          : 'host-description-hint'
                       }
                     />
                   </FormField>
@@ -346,6 +406,7 @@ function HostEventPage() {
                       type="date"
                       value={form.date}
                       onChange={handleChange}
+                      aria-required="true"
                       aria-invalid={Boolean(errors.date)}
                       aria-describedby={errors.date ? 'host-date-error' : undefined}
                     />
@@ -359,6 +420,7 @@ function HostEventPage() {
                       type="time"
                       value={form.time}
                       onChange={handleChange}
+                      aria-required="true"
                       aria-invalid={Boolean(errors.time)}
                       aria-describedby={errors.time ? 'host-time-error' : undefined}
                     />
@@ -373,6 +435,7 @@ function HostEventPage() {
                       placeholder="e.g. IIT Powai Main Gymkhana"
                       value={form.venue}
                       onChange={handleChange}
+                      aria-required="true"
                       aria-invalid={Boolean(errors.venue)}
                       aria-describedby={errors.venue ? 'host-venue-error' : undefined}
                     />
@@ -387,6 +450,7 @@ function HostEventPage() {
                       placeholder="e.g. Mumbai"
                       value={form.city}
                       onChange={handleChange}
+                      aria-required="true"
                       aria-invalid={Boolean(errors.city)}
                       aria-describedby={errors.city ? 'host-city-error' : undefined}
                     />
@@ -408,6 +472,7 @@ function HostEventPage() {
                       name="ticketType"
                       value={form.ticketType}
                       onChange={handleChange}
+                      aria-required="true"
                       aria-invalid={Boolean(errors.ticketType)}
                       aria-describedby={
                         errors.ticketType ? 'host-ticketType-error' : undefined
@@ -436,7 +501,9 @@ function HostEventPage() {
                       value={form.price}
                       onChange={handleChange}
                       aria-invalid={Boolean(errors.price)}
-                      aria-describedby={errors.price ? 'host-price-error' : undefined}
+                      aria-describedby={
+                        errors.price ? 'host-price-error' : 'host-price-hint'
+                      }
                     />
                   </FormField>
                 </div>

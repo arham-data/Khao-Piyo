@@ -170,7 +170,7 @@ function EventDetailPage() {
 
             {/* ==================== TICKET PANEL ==================== */}
             <aside className="event-detail-ticket" aria-label="Ticket details">
-              <p className="event-detail-ticket-label">Student Pass</p>
+              <h2 className="event-detail-ticket-label">Student Pass</h2>
               <p className="event-detail-price">{event.price}</p>
               <p className="event-detail-organiser">
                 Hosted by {event.organiser}

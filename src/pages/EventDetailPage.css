@@ -7,7 +7,7 @@
 .event-detail-page {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: clip;
   background-color: #090814;
 }
 
@@ -328,6 +328,7 @@
   font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.18em;
+  line-height: 1.4;
   text-transform: uppercase;
 }
 
@@ -371,7 +372,7 @@
 .event-detail-fact-label {
   display: block;
   margin-bottom: 0.15rem;
-  color: #64748b;
+  color: #94a3b8;
   font-size: 0.62rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -407,7 +408,7 @@
 
 .event-detail-note {
   margin-top: 0.9rem;
-  color: #64748b;
+  color: #94a3b8;
   font-size: 0.72rem;
   line-height: 1.6;
   text-align: center;
@@ -556,5 +557,68 @@
 
   .event-detail-related-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ------------------------------------------------------------
+   PHONES
+   Tighter padding so long venue names and prices keep room.
+   ------------------------------------------------------------ */
+
+@media (max-width: 639px) {
+  .event-detail-shell {
+    padding: 1.25rem 1rem 4rem;
+  }
+
+  .event-detail-hero {
+    border-radius: 0.75rem;
+  }
+
+  .event-detail-title {
+    margin-top: 1.25rem;
+  }
+
+  .event-detail-meta {
+    gap: 0.5rem;
+  }
+
+  .event-detail-meta-item {
+    width: 100%;
+    font-size: 0.78rem;
+  }
+
+  .event-detail-section {
+    margin-top: 2rem;
+  }
+
+  .event-detail-ticket {
+    padding: 1.25rem;
+  }
+
+  .event-detail-price {
+    font-size: 1.6rem;
+  }
+
+  .event-detail-related {
+    margin-top: 2.5rem;
+  }
+
+  .event-detail-missing {
+    margin: 2rem auto;
+    padding: 2rem 1.25rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   REDUCED MOTION
+   The global rule already shortens every transition; this also
+   removes the hover lifts on the new buttons.
+   ------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .event-detail-cta:hover,
+  .event-detail-missing-btn:hover {
+    transform: none;
+    filter: none;
   }
 }

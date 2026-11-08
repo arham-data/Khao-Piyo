@@ -7,7 +7,7 @@
 .host-page {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: clip;
   background-color: #090814;
 }
 
@@ -246,7 +246,7 @@
   background-color: rgba(9, 8, 20, 0.6);
   color: #f8fafc;
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.5;
   color-scheme: dark;
   transition: border-color 0.2s ease, box-shadow 0.2s ease,
@@ -254,7 +254,7 @@
 }
 
 .host-input::placeholder {
-  color: #64748b;
+  color: #7f8ea3;
 }
 
 .host-input:hover {
@@ -287,7 +287,7 @@
 
 .host-hint {
   margin-top: 0.4rem;
-  color: #64748b;
+  color: #94a3b8;
   font-size: 0.72rem;
   line-height: 1.5;
 }
@@ -369,7 +369,7 @@
 
 .host-disclaimer {
   margin-top: 0.9rem;
-  color: #64748b;
+  color: #94a3b8;
   font-size: 0.72rem;
   line-height: 1.6;
   text-align: center;
@@ -417,7 +417,7 @@
   height: 1.75rem;
   border-radius: 9999px;
   background-image: linear-gradient(to bottom right, #ec13b8, #8b5cf6);
-  color: #ffffff;
+  color: #0b0716;
   font-size: 0.78rem;
   font-weight: 800;
   box-shadow: 0 0 16px rgba(236, 19, 184, 0.45);
@@ -440,7 +440,7 @@
   margin-top: 1.75rem;
   padding-top: 1.25rem;
   border-top: 1px dashed rgba(255, 255, 255, 0.15);
-  color: #64748b;
+  color: #94a3b8;
   font-size: 0.75rem;
   line-height: 1.6;
 }
@@ -466,6 +466,11 @@
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9);
   text-align: center;
+}
+
+/* Focused by the router, not by Tab, so it needs no ring */
+.host-success:focus {
+  outline: none;
 }
 
 .host-success-mark {
@@ -517,7 +522,7 @@
 }
 
 .host-success-facts dt {
-  color: #64748b;
+  color: #94a3b8;
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -598,5 +603,55 @@
   .host-aside {
     position: sticky;
     top: 1.5rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   PHONES
+   Tighter padding so the form keeps full-width fields.
+   ------------------------------------------------------------ */
+
+@media (max-width: 639px) {
+  .host-shell {
+    padding: 1.25rem 1rem 4rem;
+  }
+
+  .host-hero {
+    margin-bottom: 1.5rem;
+  }
+
+  .host-form {
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+  }
+
+  .host-section-title {
+    margin-top: 1.75rem;
+  }
+
+  .host-aside {
+    padding: 1.25rem;
+  }
+
+  .host-success {
+    padding: 2rem 1.25rem;
+    border-radius: 0.75rem;
+  }
+
+  .host-success-facts {
+    padding: 1rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   REDUCED MOTION
+   The global rule already shortens every transition; this also
+   removes the hover lift on the submit button.
+   ------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .host-btn-primary:hover {
+    transform: none;
+    filter: none;
   }
 }
