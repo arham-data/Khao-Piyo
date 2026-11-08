@@ -1,6 +1,6 @@
 /* ============================================================
    FOOTER
-   Frosted glass bar with the giant Devanagari tagline.
+   Frosted glass bar with the site name in Amita.
    ============================================================ */
 
 .footer {
@@ -75,7 +75,9 @@
 }
 
 /* ------------------------------------------------------------
-   TAGLINE
+   SITE NAME
+   Set in Amita — the same Devanagari face used elsewhere on the
+   site — filled with the neon gradient.
    ------------------------------------------------------------ */
 
 .footer-inner {
@@ -85,14 +87,14 @@
   padding: 3rem 2rem;
 }
 
-.footer-tagline {
+.footer-brand {
   width: 100%;
   padding: 1.5rem 0;
   font-family: 'Amita', cursive;
-  font-size: clamp(2.5rem, 13vw, 15rem);
+  font-size: clamp(2rem, 7vw, 5rem);
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: 0.025em;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
   text-align: center;
   overflow-wrap: break-word;
   user-select: none;
@@ -103,7 +105,7 @@
   text-shadow: 0 0 35px rgba(236, 19, 184, 0.6), 0 0 70px rgba(0, 210, 255, 0.4);
 }
 
-/* Tighter padding on phones so the tagline gets the width */
+/* Tighter padding on phones */
 @media (max-width: 639px) {
   .footer {
     padding: 2.5rem 1.25rem 2rem;
@@ -113,7 +115,7 @@
     padding: 1rem 0;
   }
 
-  .footer-tagline {
+  .footer-brand {
     padding: 0.5rem 0;
   }
 }

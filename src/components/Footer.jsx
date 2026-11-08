@@ -3,11 +3,8 @@ import './Footer.css'
 /**
  * FOOTER
  *
- * Liquid-glass footer with the giant Amita brand tagline.
- * Shared by the homepage and (from milestone 6) the All Events page.
- *
- * Note: the Stitch homepage export cut the tagline off after "खाओ पियो,".
- * The All Events screen has the full line, so that version is used here.
+ * Liquid-glass footer with the site name.
+ * Shared by the homepage and the Discover All Events page.
  */
 function Footer() {
   return (
@@ -21,8 +18,8 @@ function Footer() {
       <div className="footer-orb footer-orb-purple" />
 
       <div className="footer-inner">
-        <h2 className="footer-tagline" lang="hi">
-          खाओ पियो, ऐश करो मित्रों!
+        <h2 className="footer-brand" lang="hi">
+          खाओ पियो
         </h2>
       </div>
     </footer>
