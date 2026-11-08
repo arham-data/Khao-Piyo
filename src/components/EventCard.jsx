@@ -35,7 +35,10 @@ function EventCard({ event, image, variant = 'featured' }) {
               : `event-card-image img-${event.imageFilter}`
           }
           src={photo}
-          alt={event.title}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
         />
         <div className="event-card-media-fade" />
 
@@ -116,7 +119,7 @@ function EventCard({ event, image, variant = 'featured' }) {
             </span>
           )}
 
-          <a className="event-card-link" href="#">
+          <button type="button" className="event-card-link">
             {isListing ? 'Details' : 'View Details'}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
               <path
@@ -126,7 +129,7 @@ function EventCard({ event, image, variant = 'featured' }) {
                 strokeWidth="2"
               />
             </svg>
-          </a>
+          </button>
         </div>
       </div>
     </article>

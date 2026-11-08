@@ -21,7 +21,9 @@ function Footer() {
       <div className="footer-orb footer-orb-purple" />
 
       <div className="footer-inner">
-        <h2 className="footer-tagline">खाओ पियो, ऐश करो मित्रों!</h2>
+        <h2 className="footer-tagline" lang="hi">
+          खाओ पियो, ऐश करो मित्रों!
+        </h2>
       </div>
     </footer>
   )

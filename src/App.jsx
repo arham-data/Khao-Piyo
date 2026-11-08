@@ -1,7 +1,43 @@
-import { useEffect, useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import AllEventsPage from './pages/AllEventsPage'
+
+/* The browser tab title for each route. */
+const PAGE_TITLES = {
+  '/': 'Khao Piyo — Khao Piyo Aish Karo Mitro! | College Fests, Concerts & Bhandaras',
+  '/events': 'Discover All Events | Khao Piyo',
+}
+
+/**
+ * Runs on every route change:
+ *   1. sets the browser tab title
+ *   2. jumps back to the top of the page
+ *   3. moves focus into the new page so screen readers announce it
+ *
+ * Without this, opening /events after scrolling the homepage would
+ * drop you halfway down the new page.
+ */
+function RouteEffects() {
+  const { pathname } = useLocation()
+  const isFirstLoad = useRef(true)
+
+  useEffect(() => {
+    document.title = PAGE_TITLES[pathname] ?? 'Khao Piyo'
+    window.scrollTo(0, 0)
+
+    // Do not steal focus on the very first page load.
+    if (isFirstLoad.current) {
+      isFirstLoad.current = false
+      return
+    }
+
+    const main = document.getElementById('main-content')
+    if (main) main.focus({ preventScroll: true })
+  }, [pathname])
+
+  return null
+}
 
 /**
  * Small floating button that appears once the page is scrolled
@@ -19,12 +55,18 @@ function BackToTop() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  function scrollToTop() {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' })
+  }
+
   return (
     <button
       type="button"
       className={visible ? 'back-to-top is-visible' : 'back-to-top'}
       aria-label="Back to top"
-      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      onClick={scrollToTop}
     >
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
         <path
@@ -41,6 +83,13 @@ function BackToTop() {
 function App() {
   return (
     <BrowserRouter>
+      {/* Keyboard users can jump straight past the hero */}
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
+
+      <RouteEffects />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/events" element={<AllEventsPage />} />

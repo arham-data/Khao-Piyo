@@ -85,6 +85,34 @@
 }
 
 /* ------------------------------------------------------------
+   BACK LINK
+   Not in the Stitch screen — the design has no navbar, so this
+   is the only route back to the homepage.
+   ------------------------------------------------------------ */
+
+.all-events-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-bottom: 1.25rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #bdf4ff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.all-events-back:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* ------------------------------------------------------------
    HEADER CARD
    ------------------------------------------------------------ */
 
@@ -472,11 +500,11 @@
   letter-spacing: 0.08em;
 }
 
-.all-events-signoff-links a {
+.all-events-signoff-link {
   transition: color 0.2s ease;
 }
 
-.all-events-signoff-links a:hover {
+.all-events-signoff-link:hover {
   color: #bdf4ff;
 }
 
