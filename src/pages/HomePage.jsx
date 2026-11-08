@@ -1,5 +1,6 @@
 import heroStage from '../assets/images/hero-stage.png'
 import EventCard from '../components/EventCard'
+import Footer from '../components/Footer'
 import { categories } from '../data/categories'
 import { featuredEvents } from '../data/events'
 import './HomePage.css'
@@ -239,6 +240,36 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ==================== DISCOVERY CTA ==================== */}
+      <section className="cta" id="cta">
+        <div className="cta-inner">
+          <div className="cta-panel">
+            <div className="cta-orb cta-orb-pink" />
+            <div className="cta-orb cta-orb-blue" />
+
+            <span className="cta-eyebrow">Weekend is Calling</span>
+
+            <h2 className="cta-title">Your next plan starts here.</h2>
+
+            <p className="cta-copy">
+              Stop waiting for someone in the group chat to make plans. Find something
+              happening right near your hostel or campus tonight.
+            </p>
+
+            <div className="cta-actions">
+              <a className="cta-btn-primary" href="#events">
+                Explore Events Now
+              </a>
+              <button type="button" className="cta-btn-secondary">
+                Host or List an Event
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </main>
   )
 }
