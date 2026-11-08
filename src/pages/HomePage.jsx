@@ -176,8 +176,16 @@ function HomePage() {
               {categories.map((category) => (
                 <a
                   key={category.id}
-                  className={`glass-card glass-card-hover category-card is-${category.color}`}
+                  className={`glass-card glass-card-hover category-card is-${category.color}${
+                    category.comingSoon ? ' is-coming-soon' : ''
+                  }`}
                   href="#events"
+                  aria-disabled={category.comingSoon ? 'true' : undefined}
+                  onClick={
+                    category.comingSoon
+                      ? (event) => event.preventDefault()
+                      : undefined
+                  }
                 >
                   <div>
                     <div className="category-icon" aria-hidden="true">
@@ -198,6 +206,14 @@ function HomePage() {
                       />
                     </svg>
                   </div>
+
+                  {category.comingSoon && (
+                    <span className="category-coming-soon">
+                      <span className="category-coming-soon-label">
+                        Coming Soon
+                      </span>
+                    </span>
+                  )}
                 </a>
               ))}
             </div>
