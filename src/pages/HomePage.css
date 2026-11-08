@@ -295,3 +295,225 @@
     width: auto;
   }
 }
+
+/* ============================================================
+   INTRO SECTION
+   "Boring weekends? Not anymore." + four showcase cards
+   ============================================================ */
+
+.intro {
+  position: relative;
+  padding: 7rem 2rem;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, #090814 0%, #120e29 50%, #0d0b20 100%);
+}
+
+/* --- Ambient glow spheres --- */
+.intro-orb {
+  position: absolute;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 9999px;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.intro-orb-purple {
+  top: 25%;
+  left: 10%;
+  background-color: rgba(147, 51, 234, 0.15);
+}
+
+.intro-orb-blue {
+  right: 10%;
+  bottom: 25%;
+  background-color: rgba(14, 111, 255, 0.15);
+}
+
+.intro-inner {
+  position: relative;
+  z-index: 10;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+/* --- Section header --- */
+.intro-header {
+  max-width: 48rem;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.intro-eyebrow {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 9999px;
+  background-color: rgba(88, 28, 135, 0.6);
+  color: #d8b4fe;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.intro-title {
+  margin: 1rem 0 1.25rem;
+  color: #ffffff;
+  font-size: 1.875rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.intro-title-gradient {
+  color: transparent;
+  background-image: linear-gradient(to right, #f472b6, #d8b4fe, #00d2ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.intro-copy {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.625;
+}
+
+.intro-accent {
+  color: #fde047;
+  font-weight: 700;
+}
+
+/* --- Card grid --- */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.intro-card {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.intro-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.intro-card:hover .intro-card-icon {
+  transform: scale(1.1);
+}
+
+.intro-card-label {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.intro-card-title {
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.intro-card-text {
+  color: #cbd5e1;
+  font-size: 0.875rem;
+  line-height: 1.625;
+}
+
+/* --- Per-card colours --- */
+.intro-card.is-pink .intro-card-icon {
+  background-image: linear-gradient(to top right, #ec4899, #fb7185);
+}
+
+.intro-card.is-pink .intro-card-label {
+  color: #f472b6;
+}
+
+.intro-card.is-cyan .intro-card-icon {
+  background-image: linear-gradient(to top right, #22d3ee, #2563eb);
+}
+
+.intro-card.is-cyan .intro-card-label {
+  color: #00d2ff;
+}
+
+.intro-card.is-amber .intro-card-icon {
+  background-image: linear-gradient(to top right, #facc15, #d97706);
+}
+
+.intro-card.is-amber .intro-card-label {
+  color: #fcd34d;
+}
+
+.intro-card.is-purple .intro-card-icon {
+  background-image: linear-gradient(to top right, #a855f7, #4f46e5);
+}
+
+.intro-card.is-purple .intro-card-label {
+  color: #d8b4fe;
+}
+
+/* --- Responsive --- */
+@media (min-width: 640px) {
+  .intro-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .intro-copy {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .intro-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .intro-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ============================================================
+   SHARED HOMEPAGE UTILITIES
+   Frosted-glass cards used by the intro now, and by the
+   categories and event cards in later milestones.
+   ============================================================ */
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: rgba(236, 19, 184, 0.35);
+  box-shadow: 0 12px 35px -8px rgba(236, 19, 184, 0.25);
+}

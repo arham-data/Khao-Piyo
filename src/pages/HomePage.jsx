@@ -66,6 +66,75 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ==================== INTRO ==================== */}
+      <section className="intro" id="intro">
+        {/* Ambient glow spheres */}
+        <div className="intro-orb intro-orb-purple" />
+        <div className="intro-orb intro-orb-blue" />
+
+        <div className="intro-inner">
+          {/* Section header */}
+          <div className="intro-header">
+            <span className="intro-eyebrow">The Campus Weekend Fix</span>
+
+            <h2 className="intro-title">
+              Boring weekends?{' '}
+              <span className="intro-title-gradient">Not anymore.</span>
+            </h2>
+
+            <p className="intro-copy">
+              College fests, live shows, workshops, Bhandaras and unexpected plans —
+              discover what&apos;s happening{' '}
+              <span className="intro-accent">AASPAAS</span> without endless WhatsApp
+              group arguments.
+            </p>
+          </div>
+
+          {/* Four showcase cards */}
+          <div className="intro-grid">
+            <div className="glass-card glass-card-hover intro-card is-pink">
+              <div className="intro-card-icon">🎟️</div>
+              <span className="intro-card-label">Instant Access</span>
+              <h3 className="intro-card-title">Last-Minute Passes</h3>
+              <p className="intro-card-text">
+                Free student passes, early bird tickets, and last-second plus-one
+                wristbands before gates close.
+              </p>
+            </div>
+
+            <div className="glass-card glass-card-hover intro-card is-cyan">
+              <div className="intro-card-icon">🎸</div>
+              <span className="intro-card-label">Live Campus Gigs</span>
+              <h3 className="intro-card-title">Campus Fest Alerts</h3>
+              <p className="intro-card-text">
+                Real-time artist lineups, stage schedules, and entry requirements for
+                inter-college mega fests.
+              </p>
+            </div>
+
+            <div className="glass-card glass-card-hover intro-card is-amber">
+              <div className="intro-card-icon">🍲</div>
+              <span className="intro-card-label">Pocket Friendly</span>
+              <h3 className="intro-card-title">Bhandara Trackers</h3>
+              <p className="intro-card-text">
+                Authentic community feasts, holy prasad counters, and legendary local
+                street food trails on a ₹0 budget.
+              </p>
+            </div>
+
+            <div className="glass-card glass-card-hover intro-card is-purple">
+              <div className="intro-card-icon">🎙️</div>
+              <span className="intro-card-label">Late Night Vibes</span>
+              <h3 className="intro-card-title">Underground Comedy</h3>
+              <p className="intro-card-text">
+                Basement open-mics, unannounced comic trial spots, and acoustic jamming
+                sessions right across campus gates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
