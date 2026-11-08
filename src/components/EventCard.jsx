@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './EventCard.css'
 
 /**
@@ -126,7 +127,7 @@ function EventCard({ event, image, variant = 'featured' }) {
             </span>
           )}
 
-          <button type="button" className="event-card-link">
+          <Link className="event-card-link" to={`/events/${event.id}`}>
             {isListing ? 'Details' : 'View Details'}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
               <path
@@ -136,7 +137,7 @@ function EventCard({ event, image, variant = 'featured' }) {
                 strokeWidth="2"
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </article>

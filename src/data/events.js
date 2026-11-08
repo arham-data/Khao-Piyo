@@ -39,6 +39,12 @@ export const events = [
     description:
       "Asia's biggest collegiate cultural spectacle featuring international electronic producers, laser tunnels, and battle rounds.",
     price: 'Student ID Pass',
+    organiser: 'IIT Bombay Cultural Council',
+    highlights: [
+      'Three stages running back to back',
+      'Laser tunnel and light installations',
+      'Battle rounds between 40+ colleges',
+    ],
     image: moodIndigo,
     featured: true,
     // Discover All Events card
@@ -63,6 +69,12 @@ export const events = [
     description:
       'Heavy low-end synth basslines, college beatbox cyphers, and headlining underground Punjabi bass producers.',
     price: '₹199 Entry',
+    organiser: 'NSUT Moksha Cultural Society',
+    highlights: [
+      'Three headlining bass acts',
+      'Student beatbox cypher',
+      'Food trucks running till midnight',
+    ],
     image: bassAndBeats,
     featured: true,
     badgeColor: 'purple',
@@ -85,6 +97,12 @@ export const events = [
     description:
       'Pure bliss after all-night study or partying. Crispy puris, spicy aloo sabzi, hot halwa and endless buttermilk for all students.',
     price: 'Free Prasad',
+    organiser: 'Aaspaas Sewa Trust',
+    highlights: [
+      'Free puri, sabzi and halwa',
+      'Served till the food runs out',
+      'Open to every student, no pass needed',
+    ],
     image: sundayBhandara,
     featured: true,
     badgeColor: 'steel',
@@ -107,6 +125,12 @@ export const events = [
     description:
       "Uncensored college hostel stories, dating app catastrophes, and engineering exams satire with Delhi's sharpest comics.",
     price: '₹299 onwards',
+    organiser: 'The Comedy Store Delhi',
+    highlights: [
+      'Rahul Dua plus three guest comics',
+      'Uncensored hostel and campus material',
+      'Meet-and-greet after the show',
+    ],
     image: campusLaughs,
     featured: true,
     badgeColor: 'slate-pink',
@@ -129,6 +153,12 @@ export const events = [
     description:
       '36 hours of sleepless coding, AI agents, Midnight Maggi refills, and ₹1.5L prize pool backed by top Bengaluru tech startups.',
     price: 'Free + ₹50K Prizes',
+    organiser: 'DTU Techfest Committee',
+    highlights: [
+      '36-hour non-stop hackathon',
+      'Mentors from Bengaluru startups',
+      '₹1.5L prize pool across tracks',
+    ],
     image: techfest,
     featured: true,
     badgeColor: 'bright-cyan',
@@ -151,6 +181,12 @@ export const events = [
     description:
       'Unplugged soulful Hindi and indie pop, freshly brewed saffron kulhad chai, hand-painted rugs, and campus songwriting open mic.',
     price: 'Free Entry',
+    organiser: 'Sunder Nursery Arts Collective',
+    highlights: [
+      'Unplugged indie and Hindi sets',
+      'Saffron kulhad chai stall',
+      'Open mic for student songwriters',
+    ],
     image: indieSundowner,
     featured: true,
     badgeColor: 'slate-cyan',
@@ -173,6 +209,12 @@ export const events = [
     description:
       '16 legendary North & South campus dramatics societies going head-to-head in roaring social critiques and dhol rhythms.',
     price: 'Open to All',
+    organiser: 'DU Dramatics Circle',
+    highlights: [
+      '16 competing campus societies',
+      'Live dhol and folk percussion',
+      'Social commentary nukkad natak',
+    ],
     image: streetPlay,
     featured: true,
     badgeColor: 'slate-magenta',
@@ -195,6 +237,12 @@ export const events = [
     description:
       'Guided student crawl through legendary 70-year-old seekh kebabs, melting butter chicken, and ice-cold shahi tukda.',
     price: '₹349 Crawl Pass',
+    organiser: 'Purani Dilli Food Walks',
+    highlights: [
+      'Guided late-night food crawl',
+      'Seven legendary kebab stalls',
+      'Shahi tukda to finish',
+    ],
     image: kebabTrail,
     featured: true,
     badgeColor: 'slate-cyan',
@@ -217,6 +265,12 @@ export const events = [
     description:
       "India's top dance music powerhouse dropping folk electronica flips and chartbusting campus festival anthems.",
     price: '₹499 Early Bird',
+    organiser: 'Sunburn Campus Team',
+    highlights: [
+      'Lost Stories headlining set',
+      'Folk electronica flips all night',
+      'Student-only early bird passes',
+    ],
     image: sunburn,
     featured: false,
     badgeColor: 'magenta',
@@ -239,6 +293,12 @@ export const events = [
     description:
       'Hands-on pottery masterclass, take-home personalized terracotta planters, and unlimited artisanal iced tea & bakery bites.',
     price: '₹399 Student Pass',
+    organiser: 'Hauz Khas Loft Studio',
+    highlights: [
+      'Wheel throwing masterclass',
+      'Take-home terracotta planter',
+      'Unlimited iced tea and bakery bites',
+    ],
     image: claySip,
     featured: false,
     badgeColor: 'slate-cyan',
@@ -261,6 +321,12 @@ export const events = [
     description:
       '12 explosive student bands tearing up original grunge, metal riffs, and indie rock for the North Campus championship title.',
     price: 'Free Student Entry',
+    organiser: 'SRCC Crossroads Committee',
+    highlights: [
+      '12 student bands in one day',
+      'Original grunge and metal sets',
+      'North Campus championship round',
+    ],
     image: crossroads,
     featured: false,
     badgeColor: 'slate-pink',
@@ -283,6 +349,12 @@ export const events = [
     description:
       'Intimate spoken word, nazms, Hindi slam pieces, and acoustic harmonium beats under candlelit bohemian arches.',
     price: '₹149 Early Bird',
+    organiser: 'Kala Ghoda Poetry Circle',
+    highlights: [
+      'Urdu nazm and Hindi slam sets',
+      'Live harmonium accompaniment',
+      'Candlelit open mic cypher',
+    ],
     image: dastaan,
     featured: false,
     badgeColor: 'slate-lavender',

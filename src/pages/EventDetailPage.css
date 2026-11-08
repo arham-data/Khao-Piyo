@@ -1,0 +1,560 @@
+/* ============================================================
+   EVENT DETAIL PAGE
+   Everything is prefixed with .event-detail- so it can never
+   clash with the homepage or the All Events styles.
+   ============================================================ */
+
+.event-detail-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #090814;
+}
+
+/* ------------------------------------------------------------
+   AMBIENT STAGE LIGHTING
+   Same language as the All Events page: soft orbs plus a neon
+   bar along the very top edge.
+   ------------------------------------------------------------ */
+
+.event-detail-stage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  height: 55rem;
+  pointer-events: none;
+}
+
+.event-detail-orb {
+  position: absolute;
+  border-radius: 9999px;
+}
+
+.event-detail-orb-magenta {
+  top: -8rem;
+  left: 10%;
+  width: 32rem;
+  height: 32rem;
+  background-color: rgba(236, 19, 184, 0.16);
+  filter: blur(130px);
+}
+
+.event-detail-orb-cyan {
+  top: 2rem;
+  right: 8%;
+  width: 28rem;
+  height: 28rem;
+  background-color: rgba(0, 229, 255, 0.12);
+  filter: blur(130px);
+}
+
+.event-detail-orb-purple {
+  top: 22rem;
+  left: 45%;
+  width: 30rem;
+  height: 30rem;
+  background-color: rgba(139, 92, 246, 0.12);
+  filter: blur(140px);
+}
+
+.event-detail-neon-bar {
+  width: 100%;
+  height: 4px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    #00e5ff,
+    #ec13b8
+  );
+  opacity: 0.8;
+  box-shadow: 0 0 20px #00e5ff, 0 0 40px #ec13b8;
+}
+
+/* ------------------------------------------------------------
+   PAGE SHELL
+   ------------------------------------------------------------ */
+
+.event-detail-shell {
+  position: relative;
+  z-index: 10;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 5rem;
+}
+
+/* ------------------------------------------------------------
+   BACK LINK
+   Not in the Stitch screens — there is no navbar, so this is
+   the only route back to the listing.
+   ------------------------------------------------------------ */
+
+.event-detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-bottom: 1.25rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #bdf4ff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.event-detail-back:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* ------------------------------------------------------------
+   LAYOUT
+   One column on phones, content + ticket panel on desktop.
+   ------------------------------------------------------------ */
+
+.event-detail-layout {
+  display: grid;
+  gap: 2rem;
+}
+
+/* ------------------------------------------------------------
+   HERO PHOTO
+   ------------------------------------------------------------ */
+
+.event-detail-hero {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.85);
+}
+
+.event-detail-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-detail-hero-fade {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    to top,
+    rgba(9, 8, 20, 0.9) 0%,
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.event-detail-hero-badges {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* The badge-* colour classes live in EventCard.css and are shared */
+.event-detail-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.event-detail-category {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  background-color: rgba(9, 8, 20, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #e2e8f0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------
+   TITLE + META CHIPS
+   ------------------------------------------------------------ */
+
+.event-detail-title {
+  margin-top: 1.75rem;
+  color: #ffffff;
+  font-size: clamp(1.9rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.event-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.event-detail-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.event-detail-meta-item .material-symbols-outlined {
+  color: #67e8f9;
+  font-size: 1.1rem;
+}
+
+/* ------------------------------------------------------------
+   CONTENT SECTIONS
+   ------------------------------------------------------------ */
+
+.event-detail-section {
+  margin-top: 2.5rem;
+}
+
+.event-detail-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #f8fafc;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Small neon tick before each section heading */
+.event-detail-section-title::before {
+  content: '';
+  width: 0.35rem;
+  height: 1.1rem;
+  border-radius: 9999px;
+  background-image: linear-gradient(to bottom, #ec13b8, #00e5ff);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
+}
+
+.event-detail-copy {
+  margin-top: 1rem;
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ------------------------------------------------------------
+   WHAT TO EXPECT
+   ------------------------------------------------------------ */
+
+.event-detail-highlights {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  list-style: none;
+}
+
+.event-detail-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.event-detail-highlight-mark {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  background-color: rgba(0, 229, 255, 0.14);
+  color: #67e8f9;
+  font-size: 1rem;
+}
+
+/* ------------------------------------------------------------
+   TICKET PANEL
+   ------------------------------------------------------------ */
+
+.event-detail-ticket {
+  position: relative;
+  padding: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  background-color: rgba(15, 13, 30, 0.9);
+  background-image: linear-gradient(
+    160deg,
+    rgba(236, 19, 184, 0.12) 0%,
+    rgba(9, 8, 20, 0.6) 45%,
+    rgba(0, 229, 255, 0.1) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 30px 60px -30px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.event-detail-ticket-label {
+  color: #67e8f9;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.event-detail-price {
+  margin-top: 0.5rem;
+  color: #ffffff;
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.event-detail-organiser {
+  margin-top: 0.35rem;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.event-detail-facts {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.event-detail-fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.event-detail-fact .material-symbols-outlined {
+  flex-shrink: 0;
+  color: #a78bfa;
+  font-size: 1.15rem;
+}
+
+.event-detail-fact-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #64748b;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.event-detail-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  background-image: linear-gradient(to right, #ec13b8, #8b5cf6, #00e5ff);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  box-shadow: 0 10px 30px -8px rgba(236, 19, 184, 0.7);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.event-detail-cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 40px -10px rgba(0, 229, 255, 0.6);
+}
+
+.event-detail-cta .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
+.event-detail-note {
+  margin-top: 0.9rem;
+  color: #64748b;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------
+   RELATED EVENTS
+   ------------------------------------------------------------ */
+
+.event-detail-related {
+  margin-top: 3.5rem;
+}
+
+.event-detail-related-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.event-detail-related-title {
+  color: #ffffff;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.event-detail-related-link {
+  color: #67e8f9;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.event-detail-related-link:hover {
+  color: #ffffff;
+}
+
+.event-detail-related-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* ------------------------------------------------------------
+   NOT FOUND PANEL
+   ------------------------------------------------------------ */
+
+.event-detail-missing {
+  max-width: 40rem;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  text-align: center;
+}
+
+.event-detail-missing-pill {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(236, 19, 184, 0.4);
+  border-radius: 9999px;
+  background-color: rgba(236, 19, 184, 0.12);
+  color: #f9a8d4;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.event-detail-missing-title {
+  margin-top: 1.25rem;
+  color: #ffffff;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.event-detail-missing-copy {
+  margin-top: 0.75rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.event-detail-missing-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1.75rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 9999px;
+  background-image: linear-gradient(to right, #ec13b8, #8b5cf6);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px -10px rgba(236, 19, 184, 0.8);
+  transition: filter 0.2s ease;
+}
+
+.event-detail-missing-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* ------------------------------------------------------------
+   BREAKPOINTS
+   ------------------------------------------------------------ */
+
+@media (min-width: 640px) {
+  .event-detail-shell {
+    padding: 2rem 2rem 6rem;
+  }
+
+  .event-detail-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .event-detail-related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .event-detail-hero {
+    aspect-ratio: 21 / 9;
+  }
+}
+
+@media (min-width: 1024px) {
+  .event-detail-layout {
+    grid-template-columns: minmax(0, 1fr) 22rem;
+    align-items: start;
+    gap: 2.5rem;
+  }
+
+  /* The ticket panel follows you down the page */
+  .event-detail-ticket {
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  .event-detail-related-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

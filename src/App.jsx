@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import AllEventsPage from './pages/AllEventsPage'
+import EventDetailPage from './pages/EventDetailPage'
 
 /* The browser tab title for each route. */
 const PAGE_TITLES = {
@@ -23,7 +24,13 @@ function RouteEffects() {
   const isFirstLoad = useRef(true)
 
   useEffect(() => {
-    document.title = PAGE_TITLES[pathname] ?? 'Khao Piyo'
+    // Event detail pages name themselves (they know the event title).
+    const isEventDetail = pathname.startsWith('/events/')
+
+    if (!isEventDetail) {
+      document.title = PAGE_TITLES[pathname] ?? 'Khao Piyo'
+    }
+
     window.scrollTo(0, 0)
 
     // Do not steal focus on the very first page load.
@@ -93,6 +100,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/events" element={<AllEventsPage />} />
+        <Route path="/events/:id" element={<EventDetailPage />} />
       </Routes>
 
       <BackToTop />
