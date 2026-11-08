@@ -3,20 +3,38 @@ import './EventCard.css'
 /**
  * EVENT CARD
  *
- * One reusable card for an event. It receives:
- *   event -> an object from src/data/events.js
- *   image -> the photo to show at the top
+ * One reusable card, two looks:
  *
- * Used on the homepage now, and on the All Events page later.
+ *   variant="featured"  (default) -> homepage grid
+ *   variant="listing"            -> Discover All Events grid
+ *
+ * Props:
+ *   event   -> an object from src/data/events.js or src/data/allEvents.js
+ *   image   -> fallback photo (homepage cards all share one)
+ *   variant -> "featured" or "listing"
+ *
+ * The photo comes from event.image when the event has one,
+ * otherwise from the image prop.
  */
-function EventCard({ event, image }) {
+function EventCard({ event, image, variant = 'featured' }) {
+  const isListing = variant === 'listing'
+  const photo = event.image || image
+
+  const cardClass = isListing
+    ? `event-card is-listing glow-${event.glow}`
+    : `glass-card glass-card-hover event-card is-${event.accent}`
+
   return (
-    <article className={`glass-card glass-card-hover event-card is-${event.accent}`}>
+    <article className={cardClass}>
       {/* ---------- Photo + badges ---------- */}
       <div className="event-card-media">
         <img
-          className={`event-card-image img-${event.imageFilter}`}
-          src={image}
+          className={
+            isListing
+              ? 'event-card-image'
+              : `event-card-image img-${event.imageFilter}`
+          }
+          src={photo}
           alt={event.title}
         />
         <div className="event-card-media-fade" />
@@ -25,9 +43,27 @@ function EventCard({ event, image }) {
           {event.badge}
         </span>
 
-        <span className={`event-card-price price-${event.priceColor}`}>
-          {event.price}
-        </span>
+        {/* The listing design has a bookmark heart instead of a price chip */}
+        {isListing ? (
+          <button
+            type="button"
+            className="event-card-bookmark"
+            aria-label={`Bookmark ${event.title}`}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+        ) : (
+          <span className={`event-card-price price-${event.priceColor}`}>
+            {event.price}
+          </span>
+        )}
       </div>
 
       {/* ---------- Text ---------- */}
@@ -70,12 +106,18 @@ function EventCard({ event, image }) {
 
         {/* ---------- Footer ---------- */}
         <div className="event-card-footer">
-          <span className={`event-card-footer-label footer-${event.footerColor}`}>
-            {event.footer}
-          </span>
+          {isListing ? (
+            <span className={`event-card-chip chip-${event.priceColor}`}>
+              {event.price}
+            </span>
+          ) : (
+            <span className={`event-card-footer-label footer-${event.footerColor}`}>
+              {event.footer}
+            </span>
+          )}
 
           <a className="event-card-link" href="#">
-            View Details
+            {isListing ? 'Details' : 'View Details'}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
               <path
                 d="M9 5l7 7-7 7"

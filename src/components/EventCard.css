@@ -369,3 +369,225 @@
 .img-hue-90 {
   filter: hue-rotate(90deg);
 }
+
+/* ============================================================
+   LISTING VARIANT
+   The "Discover All Events" grid uses a slightly different
+   card: 16:10 photo, bookmark heart, price chip in the footer.
+   ============================================================ */
+
+.event-card.is-listing {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  background-color: rgba(18, 14, 38, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.event-card.is-listing:hover {
+  transform: translateY(-0.375rem);
+}
+
+/* Each card glows in its own colour on hover */
+.event-card.is-listing.glow-magenta:hover {
+  border-color: rgba(236, 19, 184, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(236, 19, 184, 0.3);
+}
+
+.event-card.is-listing.glow-cyan:hover {
+  border-color: rgba(0, 229, 255, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(0, 229, 255, 0.3);
+}
+
+.event-card.is-listing.glow-purple:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(139, 92, 246, 0.3);
+}
+
+/* --- Photo area: 16:10 instead of a fixed height --- */
+.event-card.is-listing .event-card-media {
+  height: auto;
+  aspect-ratio: 16 / 10;
+}
+
+.event-card.is-listing .event-card-media-fade {
+  background: linear-gradient(
+    to top,
+    rgba(18, 14, 38, 0.95) 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+/* --- Bookmark heart --- */
+.event-card-bookmark {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background-color: rgba(18, 14, 38, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.event-card-bookmark:hover {
+  color: #ec13b8;
+}
+
+.event-card-bookmark svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* --- Badge sizing for the listing cards --- */
+.event-card.is-listing .event-card-badge {
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* --- Body --- */
+.event-card.is-listing .event-card-body {
+  padding: 1rem;
+}
+
+.event-card.is-listing .event-card-date {
+  margin-bottom: 0.25rem;
+  color: #9d9aa8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.event-card.is-listing .event-card-date svg {
+  color: #00e5ff;
+}
+
+.event-card.is-listing .event-card-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.event-card.is-listing:hover .event-card-title {
+  color: #ffaedc;
+}
+
+.event-card.is-listing .event-card-venue {
+  margin-top: 0.25rem;
+  color: #debece;
+  font-size: 0.875rem;
+}
+
+.event-card.is-listing .event-card-venue svg {
+  color: #bdf4ff;
+}
+
+.event-card.is-listing .event-card-description {
+  margin-top: 0.25rem;
+  color: #9d9aa8;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* --- Footer: no divider line, chip + Details link --- */
+.event-card.is-listing .event-card-footer {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: none;
+}
+
+.event-card-chip {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #343342;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.chip-cyan {
+  color: #00e5ff;
+}
+
+.chip-pink {
+  color: #ffaedc;
+}
+
+.chip-white {
+  color: #e3e0f4;
+}
+
+.event-card.is-listing .event-card-link {
+  color: #bdf4ff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.event-card.is-listing .event-card-link:hover {
+  color: #ec13b8;
+}
+
+.event-card.is-listing .event-card-link svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ============================================================
+   LISTING BADGE COLOURS
+   ============================================================ */
+
+.badge-steel {
+  background-color: #343342;
+  color: #00daf3;
+}
+
+.badge-slate-cyan {
+  background-color: #343342;
+  color: #bdf4ff;
+}
+
+.badge-slate-pink {
+  background-color: #343342;
+  color: #ffd8eb;
+}
+
+.badge-slate-magenta {
+  background-color: #343342;
+  color: #ec13b8;
+}
+
+.badge-slate-lavender {
+  background-color: #343342;
+  color: #d0bcff;
+}
+
+/* Two listing badges reuse the featured colours but need the
+   solid Stitch fill and a neon glow. */
+.event-card.is-listing .badge-magenta {
+  background-color: #ec13b8;
+  box-shadow: 0 0 10px #ec13b8;
+}
+
+.event-card.is-listing .badge-purple {
+  background-color: #8b5cf6;
+  box-shadow: 0 0 10px #8b5cf6;
+}
+
+.badge-bright-cyan {
+  background-color: #00e3fd;
+  color: #00363d;
+  font-weight: 700;
+}
