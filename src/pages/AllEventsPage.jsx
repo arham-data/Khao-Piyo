@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import EventCard from '../components/EventCard'
 import Footer from '../components/Footer'
-import { allEvents } from '../data/allEvents'
+import { events } from '../data/events'
 import './AllEventsPage.css'
 
 /**
@@ -10,7 +10,7 @@ import './AllEventsPage.css'
  * The full listing page (/events):
  *   1. Ambient "stage rigging" background
  *   2. Header card with the page title and three stat chips
- *   3. Twelve event cards from src/data/allEvents.js
+ *   3. Twelve event cards from src/data/events.js
  *   4. Load more + pagination controls
  *   5. Host / list-your-event callout
  *   6. Devanagari sign-off card
@@ -94,7 +94,7 @@ function AllEventsPage() {
           <h2 className="sr-only">All events</h2>
 
           <div className="all-events-grid">
-            {allEvents.map((event) => (
+            {events.map((event) => (
               <EventCard key={event.id} event={event} variant="listing" />
             ))}
           </div>

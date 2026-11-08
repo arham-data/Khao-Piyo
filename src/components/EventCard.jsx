@@ -9,16 +9,23 @@ import './EventCard.css'
  *   variant="listing"            -> Discover All Events grid
  *
  * Props:
- *   event   -> an object from src/data/events.js or src/data/allEvents.js
+ *   event   -> an object from src/data/events.js
  *   image   -> fallback photo (homepage cards all share one)
  *   variant -> "featured" or "listing"
  *
- * The photo comes from event.image when the event has one,
- * otherwise from the image prop.
+ * The homepage card uses one shared stage photo; the listing card
+ * uses the event's own image.
  */
 function EventCard({ event, image, variant = 'featured' }) {
   const isListing = variant === 'listing'
-  const photo = event.image || image
+
+  // The homepage grid deliberately shares one stage photo.
+  // The Discover All Events grid gives every event its own.
+  const photo = isListing ? event.image : image || event.image
+
+  // Each card style has its own colour keys in src/data/events.js
+  const badgeColor = isListing ? event.badgeColor : event.featuredBadgeColor
+  const priceColor = isListing ? event.priceColor : event.featuredPriceColor
 
   const cardClass = isListing
     ? `event-card is-listing glow-${event.glow}`
@@ -42,7 +49,7 @@ function EventCard({ event, image, variant = 'featured' }) {
         />
         <div className="event-card-media-fade" />
 
-        <span className={`event-card-badge badge-${event.badgeColor}`}>
+        <span className={`event-card-badge badge-${badgeColor}`}>
           {event.badge}
         </span>
 
@@ -63,7 +70,7 @@ function EventCard({ event, image, variant = 'featured' }) {
             </svg>
           </button>
         ) : (
-          <span className={`event-card-price price-${event.priceColor}`}>
+          <span className={`event-card-price price-${priceColor}`}>
             {event.price}
           </span>
         )}
@@ -110,7 +117,7 @@ function EventCard({ event, image, variant = 'featured' }) {
         {/* ---------- Footer ---------- */}
         <div className="event-card-footer">
           {isListing ? (
-            <span className={`event-card-chip chip-${event.priceColor}`}>
+            <span className={`event-card-chip chip-${priceColor}`}>
               {event.price}
             </span>
           ) : (

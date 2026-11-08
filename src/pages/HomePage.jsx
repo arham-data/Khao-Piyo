@@ -3,7 +3,7 @@ import heroStage from '../assets/images/hero-stage.png'
 import EventCard from '../components/EventCard'
 import Footer from '../components/Footer'
 import { categories } from '../data/categories'
-import { featuredEvents } from '../data/events'
+import { events } from '../data/events'
 import './HomePage.css'
 
 /**
@@ -236,11 +236,13 @@ function HomePage() {
               </div>
             </div>
 
-            {/* Eight cards generated from src/data/events.js */}
+            {/* Eight cards — the events flagged as featured */}
             <div className="events-grid">
-              {featuredEvents.map((event) => (
-                <EventCard key={event.id} event={event} image={heroStage} />
-              ))}
+              {events
+                .filter((event) => event.featured)
+                .map((event) => (
+                  <EventCard key={event.id} event={event} image={heroStage} />
+                ))}
             </div>
 
             <div className="events-more">
