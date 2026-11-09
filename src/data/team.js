@@ -11,8 +11,8 @@
  */
 
 export const siteSocials = {
-  instagram: 'https://www.instagram.com/khaopiyo',
-  linkedin: 'https://www.linkedin.com/company/khaopiyo',
+  instagram: 'https://www.instagram.com/khaopiyo.01/',
+  linkedin: '',
 }
 
 export const people = [
@@ -20,21 +20,21 @@ export const people = [
     role: 'Founder & President',
     name: 'Lakshit',
     link: '',
-    handle: '@aarav.mehta',
+    handle: '@Lakshit',
     instagram: 'https://www.instagram.com/lakshit.x8',
   },
   {
     role: 'Founder & Vice President',
     name: 'Kartik Singh',
     link: '',
-    handle: '@diya.sharma',
+    handle: '@Kartik.singh',
     instagram: 'https://www.instagram.com/kartik_singh_0509',
   },
   {
     role: 'General Secretary',
     name: 'Arham Jain',
     link: '',
-    handle: '@neha.kapoor',
+    handle: '@arham.jain',
     instagram: 'https://www.instagram.com/arhamjain__08',
   },
 ]
@@ -43,8 +43,8 @@ export const team = [
   {
     name: 'Dishant Verma',
     link: '',
-    handle: '@kabir.nair',
-    instagram: 'https://www.instagram.com/kabir.nair',
+    handle: '@Dishant.verma',
+    instagram: 'https://www.instagram.com/dishantverma._/',
   },
   {
     name: 'Shashwat',
