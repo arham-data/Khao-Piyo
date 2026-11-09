@@ -78,6 +78,5 @@ export const categories = [
     title: 'Local Experiences',
     description: 'Midnight heritage cycling walks, sunrise photo walks & stargazing.',
     cta: 'Explore 19 Experiences',
-    comingSoon: true,
   },
 ]
