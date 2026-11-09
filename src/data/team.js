@@ -17,43 +17,43 @@ export const siteSocials = {
 
 export const people = [
   {
-    role: 'Founder',
-    name: 'Aarav Mehta',
+    role: 'Founder & President',
+    name: 'Lakshit',
     link: 'https://www.linkedin.com/in/aaravmehta',
     handle: '@aarav.mehta',
-    instagram: 'https://www.instagram.com/aarav.mehta',
+    instagram: 'https://www.instagram.com/lakshit.x8',
   },
   {
-    role: 'Co-founder',
-    name: 'Diya Sharma',
+    role: 'Founder & Vice President',
+    name: 'Kartik Singh',
     link: 'https://www.linkedin.com/in/diyasharma',
     handle: '@diya.sharma',
-    instagram: 'https://www.instagram.com/diya.sharma',
+    instagram: 'https://www.instagram.com/kartik_singh_0509',
   },
   {
     role: 'General Secretary',
-    name: 'Neha Kapoor',
+    name: 'Arham Jain',
     link: 'https://www.linkedin.com/in/nehakapoor',
     handle: '@neha.kapoor',
-    instagram: 'https://www.instagram.com/neha.kapoor',
+    instagram: 'https://www.instagram.com/arhamjain__08',
   },
 ]
 
 export const team = [
   {
-    name: 'Kabir Nair',
+    name: 'Dishant Verma',
     link: 'https://www.linkedin.com/in/kabirnair',
     handle: '@kabir.nair',
     instagram: 'https://www.instagram.com/kabir.nair',
   },
   {
-    name: 'Ishita Rao',
+    name: 'Shashwat',
     link: 'https://www.linkedin.com/in/ishitarao',
     handle: '@ishita.rao',
     instagram: 'https://www.instagram.com/ishita.rao',
   },
   {
-    name: 'Rohan Verma',
+    name: 'Arnav Rohillia',
     link: 'https://www.linkedin.com/in/rohanverma',
     handle: '@rohan.verma',
     instagram: 'https://www.instagram.com/rohan.verma',
