@@ -23,7 +23,8 @@ import './EventDetailPage.css'
  *   8. The shared liquid-glass Footer
  *
  * Unknown ids get a small "event not found" panel instead.
- * The ticket button is visual only — there is no backend.
+ * The ticket CTA always renders; it links to the event's
+ * `ticketLink` when one is set and goes nowhere when it is empty.
  */
 function EventDetailPage() {
   const { id } = useParams()
@@ -208,16 +209,18 @@ function EventDetailPage() {
                 </div>
               </div>
 
-              <button type="button" className="event-detail-cta">
+              <a
+                className="event-detail-cta"
+                href={event.ticketLink || undefined}
+                target={event.ticketLink ? '_blank' : undefined}
+                rel={event.ticketLink ? 'noreferrer' : undefined}
+              >
                 Get Student Pass
                 <span className="material-symbols-outlined" aria-hidden="true">
                   arrow_forward
                 </span>
-              </button>
+              </a>
 
-              <p className="event-detail-note">
-                Demo site — no real tickets are issued and nothing is charged.
-              </p>
             </aside>
           </div>
 

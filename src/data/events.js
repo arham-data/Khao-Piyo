@@ -29,6 +29,7 @@ export const events = [
       "Asia's biggest collegiate cultural spectacle featuring international electronic producers, laser tunnels, and battle rounds.",
     price: 'Student ID Pass',
     organiser: 'IIT Delhi',
+    ticketLink: 'https://luma.com/xbuso0bj?tk=lyhD2k',
     highlights: [
       'Three stages running back to back',
       'Laser tunnel and light installations',
