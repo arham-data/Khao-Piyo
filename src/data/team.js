@@ -19,21 +19,21 @@ export const people = [
   {
     role: 'Founder & President',
     name: 'Lakshit',
-    link: 'https://www.linkedin.com/in/aaravmehta',
+    link: '',
     handle: '@aarav.mehta',
     instagram: 'https://www.instagram.com/lakshit.x8',
   },
   {
     role: 'Founder & Vice President',
     name: 'Kartik Singh',
-    link: 'https://www.linkedin.com/in/diyasharma',
+    link: '',
     handle: '@diya.sharma',
     instagram: 'https://www.instagram.com/kartik_singh_0509',
   },
   {
     role: 'General Secretary',
     name: 'Arham Jain',
-    link: 'https://www.linkedin.com/in/nehakapoor',
+    link: '',
     handle: '@neha.kapoor',
     instagram: 'https://www.instagram.com/arhamjain__08',
   },
@@ -42,19 +42,19 @@ export const people = [
 export const team = [
   {
     name: 'Dishant Verma',
-    link: 'https://www.linkedin.com/in/kabirnair',
+    link: '',
     handle: '@kabir.nair',
     instagram: 'https://www.instagram.com/kabir.nair',
   },
   {
     name: 'Shashwat',
-    link: 'https://www.linkedin.com/in/ishitarao',
+    link: '',
     handle: '@ishita.rao',
     instagram: 'https://www.instagram.com/ishita.rao',
   },
   {
     name: 'Arnav Rohillia',
-    link: 'https://www.linkedin.com/in/rohanverma',
+    link: '',
     handle: '@rohan.verma',
     instagram: 'https://www.instagram.com/rohan.verma',
   },
