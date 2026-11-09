@@ -15,7 +15,8 @@
  * EventCard.jsx picks the right set based on its `variant` prop.
  */
 
-import moodIndigo from '../assets/images/events/mood-indigo-pro-nite.jpg'
+import moodIndigo from '../assets/images/events/fest.jpeg'
+import bhature from '../assets/images/events/bhature.jpeg'
 
 export const events = [
   {
@@ -87,7 +88,7 @@ export const events = [
       'Unlimited Chole Bhature',
       '61 rupees unlimited Chole Bhature',
     ],
-    image: moodIndigo,
+    image: bhature,
     featured: true,
     // Discover All Events card
     badgeColor: 'magenta',
