@@ -66,7 +66,7 @@ function AllEventsPage() {
                   >
                     local_fire_department
                   </span>
-                  <span>340+ College Fests</span>
+                  <span>College Fests</span>
                 </div>
                 <div className="all-events-stat">
                   <span
@@ -84,7 +84,7 @@ function AllEventsPage() {
                   >
                     near_me
                   </span>
-                  <span>Live across 12 Cities</span>
+                  <span>Live across Delhi NCR</span>
                 </div>
               </div>
             </div>
@@ -101,13 +101,6 @@ function AllEventsPage() {
 
           {/* ==================== CONTROLS ==================== */}
           <div className="all-events-controls">
-            <button type="button" className="all-events-load-more">
-              <span>Load More Events (Showing 12 of 84)</span>
-              <span className="material-symbols-outlined" aria-hidden="true">
-                sync
-              </span>
-            </button>
-
             <div className="all-events-pagination">
               <button type="button" className="all-events-page-nav">
                 Previous
@@ -155,7 +148,7 @@ function AllEventsPage() {
                 </h2>
                 <p className="all-events-host-copy">
                   Get listed in 2 minutes flat and beam your event directly onto 50,000+
-                  student feeds across Delhi NCR, Mumbai, and Bengaluru.
+                  student feeds across Delhi NCR.
                 </p>
               </div>
 
@@ -170,35 +163,7 @@ function AllEventsPage() {
             </div>
           </section>
 
-          {/* ==================== SIGN-OFF CARD ==================== */}
-          <section className="all-events-signoff">
-            <p className="all-events-signoff-tagline" lang="hi">
-              खाओ पियो, ऐश करो मित्रों!
-            </p>
-
-            <div className="all-events-signoff-links">
-              <button type="button" className="all-events-signoff-link">
-                Campus Ambassador Program
-              </button>
-              <span aria-hidden="true">•</span>
-              <button type="button" className="all-events-signoff-link">
-                Student Ticket Verification
-              </button>
-              <span aria-hidden="true">•</span>
-              <button type="button" className="all-events-signoff-link">
-                Hostel Delivery Addas
-              </button>
-              <span aria-hidden="true">•</span>
-              <button type="button" className="all-events-signoff-link">
-                Safety Guidelines &amp; Bylaws
-              </button>
-            </div>
-
-            <p className="all-events-signoff-note">
-              Built for the late-night nocturnal circuits of Indian colleges. Keep the buzz
-              high and the vibes golden.
-            </p>
-          </section>
+          
         </div>
       </main>
 

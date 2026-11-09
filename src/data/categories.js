@@ -15,7 +15,7 @@ export const categories = [
     emoji: '🎪',
     title: 'College Fests',
     description: 'Annual fests, cultural nights, battle of bands & pro-nites.',
-    cta: 'Explore 42 Fests',
+    cta: 'Explore Fests',
   },
   {
     id: 'concerts',
@@ -23,7 +23,7 @@ export const categories = [
     emoji: '🎸',
     title: 'Concerts & Music',
     description: 'EDM nights, indie rock tours, acoustic jams & campus gigs.',
-    cta: 'Explore 58 Shows',
+    cta: 'Explore Shows',
     comingSoon: true,
   },
   {
@@ -32,7 +32,7 @@ export const categories = [
     emoji: '🎤',
     title: 'Comedy Shows',
     description: 'Campus open-mics, trial shows & top comedian national tours.',
-    cta: 'Explore 29 Lineups',
+    cta: 'Explore Lineups',
     comingSoon: true,
   },
   {
@@ -41,7 +41,7 @@ export const categories = [
     emoji: '💡',
     title: 'Workshops & Exhibitions',
     description: 'UI/UX hackathons, pottery, indie art labs & tech bootcamps.',
-    cta: 'Explore 35 Bootcamps',
+    cta: 'Explore Bootcamps',
     comingSoon: true,
   },
   {
@@ -50,7 +50,7 @@ export const categories = [
     emoji: '🍲',
     title: 'Bhandaras',
     description: 'Holy prasad feasts, Tuesday langar points & community food.',
-    cta: 'Explore 18 Locations',
+    cta: 'Explore Locations',
     comingSoon: true,
   },
   {
@@ -59,7 +59,7 @@ export const categories = [
     emoji: '🎭',
     title: 'Cultural Events',
     description: 'Street nukkad natak, Urdu poetry mushairas & folk festivals.',
-    cta: 'Explore 22 Gatherings',
+    cta: 'Explore Gatherings',
     comingSoon: true,
   },
   {
@@ -68,7 +68,7 @@ export const categories = [
     emoji: '🎉',
     title: 'Parties & Social',
     description: 'Fresher sundowners, rooftop trivia nights & hostel mixers.',
-    cta: 'Explore 44 Mixers',
+    cta: 'Explore Mixers',
     comingSoon: true,
   },
   {
@@ -77,6 +77,6 @@ export const categories = [
     emoji: '🚲',
     title: 'Local Experiences',
     description: 'Midnight heritage cycling walks, sunrise photo walks & stargazing.',
-    cta: 'Explore 19 Experiences',
+    cta: 'Explore Experiences',
   },
 ]

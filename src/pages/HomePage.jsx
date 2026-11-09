@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import heroStage from '../assets/images/hero-stage.png'
+import heroStage from '../assets/images/events/fest.jpeg'
 import EventCard from '../components/EventCard'
 import Footer from '../components/Footer'
 import { categories } from '../data/categories'
@@ -38,7 +38,7 @@ function HomePage() {
               <span className="hero-badge-dot" aria-hidden="true" />
               <span>
                 <span aria-hidden="true">⚡ </span>
-                340+ College Fests, Concerts &amp; Bhandaras Happening This Week
+                Many College Fests, Concerts &amp; Bhandaras Happening This Week
               </span>
             </div>
 
@@ -263,7 +263,7 @@ function HomePage() {
 
             <div className="events-more">
               <Link className="events-more-link" to="/events">
-                <span>View All 84+ Events Happening AASPAAS</span>
+                <span>View All Events Happening Near You.</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
                   <path
                     d="M14 5l7 7m0 0l-7 7m7-7H3"
