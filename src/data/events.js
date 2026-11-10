@@ -1,7 +1,7 @@
 /**
  * EVENT DATA
  *
- * One list of twelve events used by both pages.
+ * One list of events used by both pages.
  *
  *   featured: true  -> also shown in the homepage "What's the scene?" grid
  *   featured: false -> only shown on the Discover All Events page
@@ -17,6 +17,7 @@
 
 import moodIndigo from '../assets/images/events/fest.jpeg'
 import bhature from '../assets/images/events/bhature.jpeg'
+import sundayBhandara from '../assets/images/events/sunday-maha-bhandara.jpg'
 
 export const events = [
   {
@@ -100,6 +101,37 @@ export const events = [
     accent: 'pink',
     footer: 'Free Entry',
     footerColor: 'white',
+    imageFilter: 'none',
+  },
+  {
+    id: 'sunday-maha-bhandara',
+    category: 'Bhandara',
+    badge: 'Bhandara',
+    date: 'today 10th nov All day',
+    title: 'Sunday Maha Bhandara',
+    venue: 'Shiv mandir',
+    description:
+      'A community prasad feast with free langar, live kirtan and seva for everyone. Come hungry, leave blessed. Location: Sri nagar rani bagh',
+    price: 'Free Entry',
+    organiser: 'Shiv mandir',
+    ticketLink: '',
+    highlights: [
+      'Free langar and prasad for all', 
+      'Walk-in seva slots on arrival',
+      'All Day',
+    ],
+    image: sundayBhandara,
+    featured: true,
+    // Discover All Events card
+    badgeColor: 'orange',
+    priceColor: 'emerald',
+    glow: 'cyan',
+    // Homepage card
+    featuredBadgeColor: 'orange',
+    featuredPriceColor: 'emerald',
+    accent: 'orange',
+    footer: 'Free Entry',
+    footerColor: 'emerald',
     imageFilter: 'none',
   }
 ]
